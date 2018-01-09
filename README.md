@@ -29,8 +29,10 @@ An `options` object with `verbose` boolean can also be passed as an argument.
 ```
 
 ## Screenshots
-
+### Verbose
 ![Alt text](screenshots/verbose.JPG?raw=true "Verbose routes table")
+
+### Not Verbose
 ![Alt text](screenshots/not-verbose.JPG?raw=true "Not Verbose routes table")
 
 ## Complete Example
