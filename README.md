@@ -11,7 +11,7 @@ npm install feathers-blipp --save
 `feathers-blipp` MUST be configured AFTER services.
 
 ```js
-  const blipp = require('feathers-blipp);
+  const blipp = require('feathers-blipp');
   app
     .configure(middleware)
     .configure(services)
@@ -21,7 +21,7 @@ npm install feathers-blipp --save
 An `options` object with `verbose` boolean can also be passed as an argument.
 
 ```js
-  const blipp = require('feathers-blipp);
+  const blipp = require('feathers-blipp');
   app
     .configure(middleware)
     .configure(services)
