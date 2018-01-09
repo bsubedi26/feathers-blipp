@@ -1,4 +1,5 @@
 # feathers-blipp
+FeathersJS plugin that displays the all of the routes/services similar to [`blipp`](https://github.com/danielb2/blipp) for [`Hapi`](https://github.com/hapijs/hapi).
 
 ## Installation
 
