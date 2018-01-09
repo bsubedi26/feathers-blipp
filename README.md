@@ -1,49 +1,45 @@
 # feathers-blipp
 
-[![Build Status](https://travis-ci.org/feathersjs/feathers-blipp.png?branch=master)](https://travis-ci.org/feathersjs/feathers-blipp)
-[![Code Climate](https://codeclimate.com/github/feathersjs/feathers-blipp/badges/gpa.svg)](https://codeclimate.com/github/feathersjs/feathers-blipp)
-[![Test Coverage](https://codeclimate.com/github/feathersjs/feathers-blipp/badges/coverage.svg)](https://codeclimate.com/github/feathersjs/feathers-blipp/coverage)
-[![Dependency Status](https://img.shields.io/david/feathersjs/feathers-blipp.svg?style=flat-square)](https://david-dm.org/feathersjs/feathers-blipp)
-[![Download Status](https://img.shields.io/npm/dm/feathers-blipp.svg?style=flat-square)](https://www.npmjs.com/package/feathers-blipp)
-
-> feathers blipp
-
 ## Installation
 
 ```
 npm install feathers-blipp --save
 ```
 
-## Documentation
+## Usage
 
-Please refer to the [feathers-blipp documentation](http://docs.feathersjs.com/) for more details.
+`feathers-blipp` MUST be configured AFTER services.
+
+```js
+  const blipp = require('feathers-blipp);
+  app
+    .configure(middleware)
+    .configure(services)
+    .configure(blipp); // <<-- MUST be configured AFTER services
+```
+
+An `options` object with `verbose` boolean can also be passed as an argument.
+
+```js
+  const blipp = require('feathers-blipp);
+  app
+    .configure(middleware)
+    .configure(services)
+    .configure(blipp({ verbose: true }));
+```
+
+## Screenshots
+
+![Alt text](screenshots/verbose.JPG?raw=true "Verbose routes table")
+![Alt text](screenshots/not-verbose.JPG?raw=true "Not Verbose routes table")
 
 ## Complete Example
 
-Here's an example of a Feathers server that uses `feathers-blipp`. 
-
-```js
-const feathers = require('feathers');
-const rest = require('feathers-rest');
-const hooks = require('feathers-hooks');
-const bodyParser = require('body-parser');
-const errorHandler = require('feathers-errors/handler');
-const plugin = require('feathers-blipp');
-
-// Initialize the application
-const app = feathers()
-  .configure(rest())
-  .configure(hooks())
-  // Needed for parsing bodies (login)
-  .use(bodyParser.json())
-  .use(bodyParser.urlencoded({ extended: true }))
-  // Initialize your feathers plugin
-  .use('/plugin', plugin())
-  .use(errorHandler());
-
-app.listen(3030);
-
-console.log('Feathers app started on 127.0.0.1:3030');
+```
+git clone git@github.com:bsubedi26/feathers-blipp.git
+cd /feathers-blipp/example
+npm install
+npm start
 ```
 
 ## License
